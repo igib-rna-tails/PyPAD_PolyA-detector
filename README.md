@@ -1,8 +1,3 @@
-# WORK IN PROGRESS -- main script will be added soon *
-
-
-
-
 # PyPAD (Python PolyA Detector)
 
 ## Detection of polyadenylation in RNA-seq data
@@ -35,7 +30,7 @@ To run PyPAD, please save PyPAD.py in your local directory where you have fastq 
 ```bash
 $  python PyPolyADetector.py selectminNnucleotides_trimby1nt strandness = 'forward' selectminNnucteotides = False mintail = pattern_min6AU_forward pattern_loop = pattern_1AT_forward infile_path = "unmapped_reads.fastq" outfile_path = 'output.fastq'
 ```
-## Authors:
+## Authors
 Lidia Lipińska-Zubrycka, Maciej Grochowski, Michał Małecki (Institute of Genetics and Biotechnology, University of Warsaw, Poland)
 
 ## Founding
