@@ -10,12 +10,15 @@ import filecmp
 import subprocess
 import os
 import subprocess 
+import argparse
 
 pattern_PC6 = re.compile("PC")
 pattern_6AU_forward = re.compile("[AT]{6}$")
 pattern_6AU_reverse = re.compile("^[AT]{6}")
 pattern_1AU_forward = re.compile("[AT]{1}$")
 pattern_1AU_reverse = re.compile("^[AT]{1}")
+pattern_1A_forward = re.compile("[A]{1}$")
+pattern_1A_reverse = re.compile("^[A]{1}")
 
 pattern_min6AU_forward =  re.compile("[AT]{6,}$")
 pattern_min6AU_reverse =  re.compile("^[AT]{6,}")
@@ -314,3 +317,34 @@ def selectminNnucleotides_trimby1nt(strandness = 'forward', selectminNnucteotide
             print("Incorrect value. Please select True of False" )   
     else:
         print("Incorrect strandness. Please select 'forward' (for Read 1) or 'reverse' (for Read 2)" )
+
+## na podstawie pyphe (Kamrad S.)
+##strandness = 'forward', selectminNnucteotides = True,   mintail = pattern_min6AU_forward, pattern_loop = pattern_1AU_forward,
+                                   ## infile_path = "unmapped_reads.fastq",outfile_path = 'output.fastq'
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Welcome to PyPAD - a tool that detects polyadenylation in the available RNA-seq sequencing data . Written by lipinska@biol.uw.edu.pl and maintained at https://github.com/igib-rna-tails/PyPAD_PolyA-detector.')
+    parser.add_argument('--strandness', type=str, choices=['forward', 'reverse'], default="forward", help="Forward reads (R1, reading from 5' to 3') or reverse reads (R2, reading from 3' to 5'")
+    parser.add_argument('--selectminNnucteotides',  default=True, help='Option in PyPAD to pre-select reads having eg 6 nt in the tail before the proceduce of triming one by one nucleotide from the tail, and realign fastq file .')
+    
+    
+    parser.add_argument('--mintail', choices=[pattern_min6AU_forward, pattern_min6AU_reverse], default=pattern_min6AU_forward, help='Option of pattern to preselect by --selectminNnucteotides.')
+    parser.add_argument('--pattern_loop',choices=[pattern_1AU_forward, pattern_1AU_reverse, pattern_1A_forward, pattern_1A_reverse ],  default=pattern_1AU_forward, help="Pattern of nucleotides cut one by one from 3' tail")
+    
+    parser.add_argument('--infile_path', type=str, default="unmapped_reads.fastq", help='Path to the fastq file with unmapped reads to analyse. Please prepared data before the analysis with PyPAD')
+    parser.add_argument('--outfile_path', type=str, default="output.fastq", help='Path to the output fastq file after PyPAD analysis. The fastq file contains reads with precise polyA tail sequence in the header.')
+    
+    
+    args = parser.parse_args()
+    
+    #Import the data and perform some basic checks
+   # gdata = pd.read_csv(args.input, index_col=0)
+    #try: 
+   #     gdata.index = gdata.index.map(float)
+   # except Exception as eo:
+  #      print('The first column must contain the timepoint and these must only have numeric values (no units or other string).')
+  #  assert all(gdata.index[i] <= gdata.index[i+1] for i in range(len(gdata.index)-1)), 'Timepoints must be in ascending order.'
+    
+  #  result = analyse_growthcurve(gdata, args.fitrange, args.t0_fitrange, args.lag_method, args.lag_threshold, args.plots, args.plot_ylim)
+  #  result.to_csv('.'.join(args.input.split('.')[:-1]) + '_results.csv')
+    
+   # print('Analysis done: %s'%args.input)
