@@ -28,9 +28,9 @@ To run PyPAD, please save PyPAD.py in your local directory where you have fastq 
 * Build Hisat2 index 
 
 * Run the code:
-
-> python PyPolyADetector.py selectminNnucleotides_trimby1nt strandness = 'forward' selectminNnucteotides = False mintail = pattern_min6AU_forward pattern_loop = pattern_1AT_forward infile_path = "unmapped_reads.fastq" outfile_path = 'output.fastq'
-
+```bash
+$  python PyPolyADetector.py selectminNnucleotides_trimby1nt strandness = 'forward' selectminNnucteotides = False mintail = pattern_min6AU_forward pattern_loop = pattern_1AT_forward infile_path = "unmapped_reads.fastq" outfile_path = 'output.fastq'
+```
 
 ## Founding
 Work was supported by **Foundation for Polish Science** (grant no. POIR.04.04.00-00-4316/17-00) and **National Science Centre** (grant no. 2019/03/X/NZ2/00787).
