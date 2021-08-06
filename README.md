@@ -17,8 +17,17 @@ There are methods for detecting polyadenylation sites based on sequencing of the
 
 
 
-## Installation of dependencies
-*
+## Dependencies
+* python v 3.x.x
+
+  * [filecmp](https://docs.python.org/3/library/filecmp.html)
+  * [re](https://docs.python.org/3/library/re.html)
+  * [csv](https://docs.python.org/3/library/csv.html)
+* Bio Bio.Seq
+* [HiSat2](http://daehwankimlab.github.io/hisat2/manual/)
+* [samtools](http://www.htslib.org/doc/samtools.html)
+* [bedtools[(https://bedtools.readthedocs.io/en/latest/)
+* 
 *
 *
 
@@ -54,7 +63,7 @@ optional arguments:
   --selectminNnucteotides SELECTMINNNUCTEOTIDES
                         Option in PyPAD to pre-select reads having eg 6 nt in
                         the tail before the proceduce of triming one by one
-                        nucleotide from the tail, and realign fastq file .
+                        nucleotide from the tail, and realign fastq file.
   --mintail {re.compile('[AT]{6,}$'),re.compile('^[AT]{6,}')}
                         Option of pattern to preselect by
                         --selectminNnucteotides.
