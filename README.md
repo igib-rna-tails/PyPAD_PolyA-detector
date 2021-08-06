@@ -10,7 +10,8 @@ There are methods for detecting polyadenylation sites based on sequencing of the
 ![scheme](PyPAD_scheme_github.png)
 
 ## Table of content
-* Installation of dependencies
+* Dependencies
+* Installation of requirenments
 * Usage
 * Authors
 * Founding
@@ -18,18 +19,17 @@ There are methods for detecting polyadenylation sites based on sequencing of the
 
 
 ## Dependencies
-* python v 3.x.x
-
+* Python v 3.x.x
   * [filecmp](https://docs.python.org/3/library/filecmp.html)
   * [re](https://docs.python.org/3/library/re.html)
   * [csv](https://docs.python.org/3/library/csv.html)
-* Bio Bio.Seq
+* [Biopython](https://biopython.org/wiki/Download)
 * [HiSat2](http://daehwankimlab.github.io/hisat2/manual/)
 * [samtools](http://www.htslib.org/doc/samtools.html)
-* [bedtools[(https://bedtools.readthedocs.io/en/latest/)
-* 
-*
-*
+* [bedtools](https://bedtools.readthedocs.io/en/latest/)
+
+## Installation of requirenments
+
 
 ## Usage
 To run PyPAD, please save PyPAD.py in your local directory where you have fastq file to analyse. In the directory, you should prepare folder 'reference' containing built index for HiSat2. (Feel free to use another aligner. To do it, you should change the code in PyPAD.py carefully.)
