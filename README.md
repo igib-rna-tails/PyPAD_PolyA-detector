@@ -24,12 +24,15 @@ There are methods for detecting polyadenylation sites based on sequencing of the
 
 ## Usage
 To run PyPAD, please save PyPAD.py in your local directory where you have fastq file to analyse. In the directory, you should prepare folder 'reference' containing built index for HiSat2. (Feel free to use another aligner. To do it, you should change the code in PyPAD.py carefully.)
-* Build Hisat2 index 
-* Select unmapped reads -- we recommend ....
+* Build Hisat2 index according to [documentation](http://daehwankimlab.github.io/hisat2/manual/), and save your reference in "reference" file
+* Select unmapped reads -- we recommend to preprocessed data in a common way (quality control, trimming adaptors), and than do alignment, and select unmapped reads. We did it using samtools
+```bash
+$  samtools view -b -f 4 input.bam > output_unmapped.bam
+```
 
 * Run the code:
 ```bash
-$  python PyPolyADetector.py [optional arguments]'
+$  python PyPolyADetector.py [optional arguments]
 ```
 * Help & Options
 ```bash
@@ -40,8 +43,7 @@ usage: PyPolyADetector.py [-h] [--strandness {forward,reverse}]
                           [--infile_path INFILE_PATH]
                           [--outfile_path OUTFILE_PATH]
 
-Welcome to PyPAD - a tool that detects polyadenylation in the available RNA-
-seq sequencing data . Written by lipinska@biol.uw.edu.pl and maintained at
+Welcome to PyPAD - a tool that detects polyadenylation in the available RNA- seq sequencing data. Written by lipinska@biol.uw.edu.pl and maintained at
 https://github.com/igib-rna-tails/PyPAD_PolyA-detector.
 
 optional arguments:
