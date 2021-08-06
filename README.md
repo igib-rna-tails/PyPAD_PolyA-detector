@@ -31,7 +31,7 @@ There are methods for detecting polyadenylation sites based on sequencing of the
 ## Usage
 To run PyPAD, please save PyPAD.py in your local directory where you have fastq file to analyse. In the directory, you should prepare folder 'reference' containing built index for HiSat2. (Feel free to use another aligner. To do it, you should change the code in PyPAD.py carefully.)
 * Build Hisat2 index according to [documentation](http://daehwankimlab.github.io/hisat2/manual/), and save your reference in "reference" file
-* Select unmapped reads -- we recommend to preprocessed data in a common way (quality control, trimming adaptors), and than do alignment, and select unmapped reads. We did it using samtools:
+* Select unmapped reads -- we recommend to preprocessed data in a common way (quality control, trimming adaptors), and than do alignment, and select unmapped reads. We extracted unmapped reads from bam file using samtools:
 ```bash
 $  samtools view -b -f 4 input.bam > output_unmapped.bam
 ```
