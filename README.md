@@ -49,8 +49,7 @@ usage: PyPolyADetector.py [-h] [--strandness {forward,reverse}]
                           [--infile_path INFILE_PATH]
                           [--outfile_path OUTFILE_PATH]
 
-Welcome to PyPAD - a tool that detects polyadenylation in the available RNA- seq sequencing data. Written by lipinska@biol.uw.edu.pl and maintained at
-https://github.com/igib-rna-tails/PyPAD_PolyA-detector.
+Welcome to PyPAD - a tool that detects polyadenylation in the available RNA- seq sequencing data. Maintained at https://github.com/igib-rna-tails/PyPAD_PolyA-detector.
 
 optional arguments:
   -h, --help            show this help message and exit
