@@ -29,7 +29,42 @@ To run PyPAD, please save PyPAD.py in your local directory where you have fastq 
 
 * Run the code:
 ```bash
-$  python PyPolyADetector.py selectminNnucleotides_trimby1nt strandness = 'forward' selectminNnucteotides = False mintail = pattern_min6AU_forward pattern_loop = pattern_1AT_forward infile_path = "unmapped_reads.fastq" outfile_path = 'output.fastq'
+$  python PyPolyADetector.py [optional arguments]'
+```
+* Help & Options
+```bash
+usage: PyPolyADetector.py [-h] [--strandness {forward,reverse}]
+                          [--selectminNnucteotides SELECTMINNNUCTEOTIDES]
+                          [--mintail {re.compile'[AT]{6,}$'),re.compile('^[AT]{6,}')}]
+                          [--pattern_loop {re.compile('[AT]{1}$'),re.compile('^[AT]{1}'),re.compile('[A]{1}$'),re.compile('^[A]{1}'}]
+                          [--infile_path INFILE_PATH]
+                          [--outfile_path OUTFILE_PATH]
+
+Welcome to PyPAD - a tool that detects polyadenylation in the available RNA-
+seq sequencing data . Written by lipinska@biol.uw.edu.pl and maintained at
+https://github.com/igib-rna-tails/PyPAD_PolyA-detector.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --strandness {forward,reverse}
+                        Forward reads (R1, reading from 5' to 3') or reverse
+                        reads (R2, reading from 3' to 5'
+  --selectminNnucteotides SELECTMINNNUCTEOTIDES
+                        Option in PyPAD to pre-select reads having eg 6 nt in
+                        the tail before the proceduce of triming one by one
+                        nucleotide from the tail, and realign fastq file .
+  --mintail {re.compile('[AT]{6,}$'),re.compile('^[AT]{6,}')}
+                        Option of pattern to preselect by
+                        --selectminNnucteotides.
+  --pattern_loop {re.compile('[AT]{1}$'),re.compile('^[AT]{1}'),re.compile('[A]{1}$'),re.compile('^[A]{1}')}
+                        Pattern of nucleotides cut one by one from 3' tail
+  --infile_path INFILE_PATH
+                        Path to the fastq file with unmapped reads to analyse.
+                        Please prepared data before the analysis with PyPAD
+  --outfile_path OUTFILE_PATH
+                        Path to the output fastq file after PyPAD analysis.
+                        The fastq file contains reads with precise polyA tail
+                        sequence in the header.
 ```
 ## Authors
 Lidia Lipińska-Zubrycka, Maciej Grochowski, Michał Małecki (Institute of Genetics and Biotechnology, University of Warsaw, Poland)
