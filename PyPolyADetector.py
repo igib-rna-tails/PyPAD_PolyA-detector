@@ -335,7 +335,7 @@ def selectminNnucleotides_trimby1nt(strandness = 'forward', selectminNnucteotide
     os.system("rm lista_headerow.txt")
     
 
-## na podstawie pyphe (Kamrad S.)
+
 ##strandness = 'forward', selectminNnucteotides = True,   mintail = pattern_min6AU_forward, pattern_loop = pattern_1AU_forward,
                                    ## infile_path = "unmapped_reads.fastq",outfile_path = 'output.fastq'
 if __name__ == '__main__':
@@ -352,21 +352,6 @@ if __name__ == '__main__':
     
     
     args = parser.parse_args()
-    
-    #Import the data and perform some basic checks
-   # gdata = pd.read_csv(args.input, index_col=0)
-    #try: 
-   #     gdata.index = gdata.index.map(float)
-   # except Exception as eo:
-  #      print('The first column must contain the timepoint and these must only have numeric values (no units or other string).')
-  #  assert all(gdata.index[i] <= gdata.index[i+1] for i in range(len(gdata.index)-1)), 'Timepoints must be in ascending order.'
-    ##(strandness = 'forward', selectminNnucteotides = True,
-                               #     mintail = pattern_min6AU_forward, pattern_loop = pattern_1AU_forward,
-                                  #  infile_path = "unmapped_reads.fastq",
-                           #outfile_path = 'output.fastq')
-    
+   
     selectminNnucleotides_trimby1nt(args.strandness, args.selectminNnucteotides, args.mintail, args.pattern_loop, args.infile_path, args.outfile_path)
-  #  result.to_csv('.'.join(args.input.split('.')[:-1]) + '_results.csv')
-    
-    
-   # print('Analysis done: %s'%args.input)
+
