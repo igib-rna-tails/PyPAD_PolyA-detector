@@ -33,7 +33,7 @@ def selectminNnucleotides_trimby1nt(strandness = 'forward', selectminNnucteotide
                                     infile_path = "unmapped_reads.fastq",
                            outfile_path = 'output.fastq'):
     '''
-    Function can select reads having at least 
+    Function can select reads having at least 6AU at 3' tail of RNA
     
     '''
     def take_reads_corresponding_to_headerlist(header_list_path = 'lista_headerow.txt', infile_path =  'unmapped_reads.fastq',outfile_path='unmapped_reads2.fastq',pattern=pattern_6AU_forward):
